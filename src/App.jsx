@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
@@ -7,11 +8,10 @@ import {
   faListAlt,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faMagnifyingGlass, faListAlt);
-import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,13 +19,18 @@ function App() {
         "https://lereacteur-vinted-api.herokuapp.com/offers"
       );
       setData(response.data);
-      setIsLoading(false);
     };
 
     fetchData();
   }, []);
 
-  return isLoading ? <span>En cours de chargement... </span> : <Header />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 
   // <div>
   //     {data.offers.map((offer, index) => {
