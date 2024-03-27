@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+.top img {
+  width: 104px;
+  height: 40px;
+}
+
+header {
+  border-bottom: 1px rgb(196, 192, 192) solid;
+  font-family: "Open Sans", sans-serif;
+}
+
+.top {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  display: flex;
+  gap: 40px;
+}
+
+.order p {
+  font-size: 13px;
+}
+
+.white {
+  display: flex;
+  gap: 20px;
+}
+.white button {
+  background-color: white;
+  border: 1px solid #2baeb7;
+  color: #2baeb7;
+  padding: 8px 25px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.blue {
+  background-color: #2baeb7;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.search {
+  background-color: #f5f6f7;
+  border: none;
+  width: 635px;
+  height: 40px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  border: none;
+  margin-left: 5px;
+}
+
+.bar {
+  background-color: #f5f6f7;
+}
+
+.set {
+  display: flex;
+}
+
+.rectangle {
+  background-color: white;
+  position: absolute;
+  border-radius: 3px;
+  box-shadow: 0 0 2px hsla(0, 0%, 7%, 0.24);
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  justify-content: center;
+  padding: 25px;
+  top: 85px;
+  width: 360px;
+}
+
+.startselling {
+  background-color: #2baeb7;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.hero {
+  background-position: 50%;
+  background-size: cover;
+  height: 455px;
+  position: relative;
+  width: 100%;
+}
+
+.replace {
+  margin: 0 auto;
+  max-width: 1280px;
+}
