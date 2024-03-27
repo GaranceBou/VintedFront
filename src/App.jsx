@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faMagnifyingGlass, faListAlt);
 import Home from "./components/Home";
+import Offers from "./components/Offers";
 
 function App() {
   const [data, setData] = useState([]);
@@ -28,6 +29,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/offers" element={<Offers />} />
       </Routes>
     </Router>
   );
