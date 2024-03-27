@@ -19,12 +19,22 @@ const Offers = () => {
   return (
     <section>
       <Header />
-      <div>
+      <div className="offers">
         {data.offers
           ? data.offers.map((offer, index) => {
               return (
                 <div key={index}>
-                  <p>{offer.product_name}</p>
+                  <p>{offer.owner.account.username}</p>
+                  {offer.product_pictures.map((picture) => {
+                    return (
+                      <img
+                        className="pic"
+                        src={picture.secure_url}
+                        alt="photo"
+                      />
+                    );
+                  })}
+                  <p>{offer.product_price}€</p>
                 </div>
               );
             })
