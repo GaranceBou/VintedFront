@@ -36,8 +36,8 @@ main {
 }
 
 .articleimages {
-  -ms-overflow-style: none; // IE 10+
-  overflow: -moz-scrollbars-none; // Firefox
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 }
 
 .articleimage {
