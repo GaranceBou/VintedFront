@@ -39,7 +39,7 @@ const Header = () => {
         </div>
         <div className="white">
           <button onClick={() => navigate("/signup")}>S'inscrire</button>
-          <button>Se connecter</button>
+          <button onClick={() => navigate("/login")}>Se connecter</button>
         </div>
         <button className="blue">Vends tes articles</button>
       </section>

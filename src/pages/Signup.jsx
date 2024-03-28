@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -44,6 +46,7 @@ const Signup = () => {
       <div className="formshape">
         <h1>S'inscrire</h1>
         <form
+          className="formsignup"
           style={{ display: "flex", flexDirection: "column" }}
           onSubmit={handleSubmit}
         >
@@ -56,7 +59,7 @@ const Signup = () => {
               setUsername(e.target.value);
             }}
           />
-          <div className="dividersignup"></div>
+          <div className="divider"></div>
           <input
             value={email}
             type="email"
@@ -66,7 +69,7 @@ const Signup = () => {
               setEmail(e.target.value);
             }}
           />
-          <div className="dividersignup"></div>
+          <div className="divider"></div>
           <input
             value={password}
             type="password"
@@ -76,7 +79,7 @@ const Signup = () => {
               setPassword(e.target.value);
             }}
           />
-          <div className="dividersignup"></div>
+          <div className="divider"></div>
           <div className="newsletter">
             <input
               className="newstick"
@@ -103,7 +106,9 @@ const Signup = () => {
             </p>
           )}
         </form>
-        <p className="connect">Tu as déjà un compte ? Connecte toi !</p>
+        <p onClick={() => navigate("/login")} className="linkpages">
+          Tu as déjà un compte ? Connecte toi !
+        </p>
       </div>
     </>
   );

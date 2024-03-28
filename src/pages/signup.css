@@ -31,7 +31,7 @@ h1 {
   margin: 20px 0;
 }
 
-.dividersignup {
+.divider {
   background-color: #e3dede;
   height: 1px;
   margin-bottom: 12px;
@@ -54,12 +54,12 @@ h1 {
   margin: 0 20px;
 }
 
-.connect {
+.linkpages {
   text-align: center;
   font-size: 14px;
   color: #2baeb7;
 }
 
-.connect:hover {
+.linkpages:hover {
   cursor: pointer;
 }
