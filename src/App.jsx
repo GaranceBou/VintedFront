@@ -6,15 +6,17 @@ import {
   faListAlt,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faMagnifyingGlass, faListAlt);
+import Header from "./components/Header";
 import Home from "./pages/Home";
-// import Offers from "./components/Offers";
+import Offer from "./pages/Offer";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/offers" element={<Offers />} /> */}
+        <Route path="/offers/:id" element={<Offer />} />
       </Routes>
     </Router>
   );

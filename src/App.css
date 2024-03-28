@@ -54,16 +54,16 @@ header {
 .search {
   background-color: #f5f6f7;
   border: none;
-  width: 635px;
   height: 40px;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 1px;
   border: none;
-  margin-left: 5px;
 }
 
 .bar {
   background-color: #f5f6f7;
+  margin: 10px;
+  width: 600px;
 }
 
 .set {
@@ -79,6 +79,7 @@ header {
   flex-direction: column;
   height: 220px;
   justify-content: center;
+  gap: 20px;
   padding: 25px;
   top: 85px;
   width: 360px;
@@ -119,4 +120,21 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.owner {
+  display: flex;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
 }
