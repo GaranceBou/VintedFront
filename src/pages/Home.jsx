@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import banner from "../assets/banner.jpg";
+import tear from "../assets/tear.svg";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -32,6 +33,7 @@ const Home = () => {
           backgroundImage: `url(${banner})`,
         }}
       >
+        <img className="tear" src={tear} alt="tear" />
         <div className="replace">
           <div className="rectangle">
             <h2>Prêts à faire du tri dans vos placards ?</h2>
@@ -53,20 +55,22 @@ const Home = () => {
                       <div className="owner">
                         <img
                           className="avatar"
-                          src={offer.owner.account.avatar.secure_url}
+                          src={offer.owner.account.avatar?.secure_url}
                           alt="avatarowner"
                         />
                         <p>{offer.owner.account.username}</p>
                       </div>
                       <img
-                        className="pic"
+                        className="productpic"
                         src={offer.product_image.secure_url}
                         alt="photo"
                       />
-                      <p>{offer.product_price} €</p>
-                      <div className="brandsize">
-                        <p>{offer.product_details[1].TAILLE}</p>
-                        <p>{offer.product_details[0].MARQUE}</p>
+                      <div className="pricebrandsize">
+                        <p>{offer.product_price} €</p>
+                        <div className="brandsize">
+                          <p>{offer.product_details[1].TAILLE} </p>
+                          <p>{offer.product_details[0].MARQUE}</p>
+                        </div>
                       </div>
                     </article>
                   </Link>

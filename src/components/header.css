@@ -1,0 +1,71 @@
+.top img {
+  width: 104px;
+  height: 40px;
+}
+
+header {
+  border-bottom: 1px rgb(196, 192, 192) solid;
+  font-family: "Open Sans", sans-serif;
+}
+
+.top {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  display: flex;
+  gap: 40px;
+}
+
+.order p {
+  font-size: 13px;
+}
+
+.white {
+  display: flex;
+  gap: 20px;
+}
+.white button {
+  background-color: white;
+  border: 1px solid #2baeb7;
+  color: #2baeb7;
+  padding: 8px 25px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.blue {
+  background-color: #2baeb7;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.search {
+  background-color: #f5f6f7;
+  border: none;
+  height: 40px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  width: 95%;
+}
+
+.bar {
+  background-color: #f5f6f7;
+  margin: 10px;
+  width: 600px;
+}
+
+.bar span {
+  padding: 0 7px;
+}
+
+.set {
+  display: flex;
+}

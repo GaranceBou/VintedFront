@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <section className="top">
         <img src={logo} alt="logo" />
-        <div className="price">
+        <div className="header-price">
           <div className="bar">
             <span>
               <FontAwesomeIcon
@@ -23,12 +23,10 @@ const Header = () => {
           </div>
           <div className="order">
             <div className="set">
-              <p>Trier par prix :</p>
-              <input className="tickprice" type="checkbox" name="price" />
+              {/* <p>Trier par prix :</p> */}
+              {/* <input className="tickprice" type="checkbox" name="price" /> */}
             </div>
-            <div className="set">
-              <p>Prix entre :</p>
-            </div>
+            <div className="set">{/* <p>Prix entre :</p> */}</div>
           </div>
         </div>
         <div className="white">

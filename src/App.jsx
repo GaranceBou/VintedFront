@@ -1,4 +1,6 @@
 import "./App.css";
+import "./components/header.css";
+import "./pages/offer.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
