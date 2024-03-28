@@ -1,0 +1,108 @@
+.rectangle {
+  background-color: white;
+  position: absolute;
+  border-radius: 3px;
+  box-shadow: 0 0 2px hsla(0, 0%, 7%, 0.24);
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+  top: 85px;
+  width: 360px;
+}
+
+.startselling {
+  background-color: #2baeb7;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.hero {
+  background-position: 50%;
+  background-size: cover;
+  height: 430px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.tear {
+  position: absolute;
+  bottom: 0;
+  width: 55%;
+  right: 0;
+}
+
+.replace {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.productpic {
+  height: 360px;
+  width: 230px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.offers {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.owner {
+  display: flex;
+}
+
+.avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.owner p {
+  font-size: 12px;
+  color: rgb(128, 125, 125);
+  line-height: 20px;
+}
+
+.pricebrandsize > p {
+  font-size: 15px;
+  color: black;
+  margin-bottom: 2px;
+}
+
+.pricebrandsize {
+  padding-left: 5px;
+}
+
+.brandsize > p {
+  font-size: 12px;
+  padding: 2px 0;
+  color: rgb(162, 161, 161);
+}
+
+.brandsize {
+  margin-bottom: 8px;
+}

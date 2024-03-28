@@ -1,6 +1,10 @@
-.top img {
+.logovinted {
   width: 104px;
   height: 40px;
+}
+
+.logovinted:hover {
+  cursor: pointer;
 }
 
 header {
@@ -56,6 +60,11 @@ header {
   width: 95%;
 }
 
+.bar input::placeholder {
+  font-size: 15px;
+  color: #c3c0c0;
+}
+
 .bar {
   background-color: #f5f6f7;
   margin: 10px;
@@ -68,4 +77,8 @@ header {
 
 .set {
   display: flex;
+}
+
+input:focus {
+  outline: none;
 }

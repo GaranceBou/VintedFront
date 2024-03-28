@@ -9,7 +9,12 @@ const Header = () => {
   return (
     <header>
       <section className="top">
-        <img src={logo} alt="logo" />
+        <img
+          className="logovinted"
+          onClick={() => navigate("/")}
+          src={logo}
+          alt="logo"
+        />
         <div className="header-price">
           <div className="bar">
             <span>
@@ -36,9 +41,7 @@ const Header = () => {
           <button onClick={() => navigate("/signup")}>S'inscrire</button>
           <button>Se connecter</button>
         </div>
-        <button className="blue" onClick={() => navigate("/signup")}>
-          Vends tes articles
-        </button>
+        <button className="blue">Vends tes articles</button>
       </section>
     </header>
   );
