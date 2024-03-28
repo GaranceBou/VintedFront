@@ -1,8 +1,11 @@
 import logo from "../assets/logovinted.png";
 
+import { useNavigate } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <section className="top">
@@ -30,10 +33,12 @@ const Header = () => {
           </div>
         </div>
         <div className="white">
-          <button>S'inscrire</button>
+          <button onClick={() => navigate("/signup")}>S'inscrire</button>
           <button>Se connecter</button>
         </div>
-        <button className="blue">Vends tes articles</button>
+        <button className="blue" onClick={() => navigate("/signup")}>
+          Vends tes articles
+        </button>
       </section>
     </header>
   );
