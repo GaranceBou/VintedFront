@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import banner from "../assets/banner.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -26,6 +26,19 @@ const Home = () => {
     <p>Is loading...</p>
   ) : (
     <div>
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `url(${banner})`,
+        }}
+      >
+        <div className="replace">
+          <div className="rectangle">
+            <h2>Prêts à faire du tri dans vos placards ?</h2>
+            <button className="startselling">Commencer à vendre</button>
+          </div>
+        </div>
+      </section>
       <section>
         <div className="offers">
           {data.offers
