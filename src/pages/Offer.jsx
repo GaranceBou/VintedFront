@@ -58,7 +58,7 @@ const Offer = () => {
               })}
             </div>
           </div>
-          <div className="divider"></div>
+          <div className="divideroffer"></div>
           <div className="bottom-part">
             <p className="offer-name">{data.product_name}</p>
             <p className="offer-description">{data.product_description}</p>

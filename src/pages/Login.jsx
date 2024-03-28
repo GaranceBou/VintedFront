@@ -7,12 +7,26 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        {}
+      );
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <div className="formshapelogin">
       <h1>Se connecter</h1>
       <form
         className="formlogin"
         style={{ display: "flex", flexDirection: "column" }}
+        onSubmit={handleSubmit}
       >
         <input
           value={email}
