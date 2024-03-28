@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faMagnifyingGlass,
