@@ -23,10 +23,10 @@ const Signup = () => {
         const response = await axios.post(
           "https://lereacteur-vinted-api.herokuapp.com/user/signup",
           {
-            username: `${username}`,
-            email: `${email}`,
-            password: `${password}`,
-            newsletter: `${newsletter}`,
+            username: username,
+            email: email,
+            password: password,
+            newsletter: newsletter,
           }
         );
         console.log(response.data);
@@ -82,11 +82,11 @@ const Signup = () => {
           <div className="divider"></div>
           <div className="newsletter">
             <input
+              checked={newsletter}
               className="newstick"
               type="checkbox"
-              name="newstick"
               onChange={(e) => {
-                setNewsletter(e.target.checked);
+                setNewsletter(!newsletter);
               }}
             />
             <p style={{ color: "#3a3a3a" }}>S'inscrire à notre newsletter</p>
