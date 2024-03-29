@@ -41,7 +41,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="secondpart">
         <div className="offers">
           {data.offers
             ? data.offers.map((offer) => {
@@ -53,11 +53,13 @@ const Home = () => {
                   >
                     <article>
                       <div className="owner">
-                        <img
-                          className="avatar"
-                          src={offer.owner.account.avatar?.secure_url}
-                          alt="avatarowner"
-                        />
+                        {offer.owner.account.avatar && (
+                          <img
+                            className="avatar"
+                            src={offer.owner.account.avatar?.secure_url}
+                            alt="avatarowner"
+                          />
+                        )}
                         <p>{offer.owner.account.username}</p>
                       </div>
                       <img

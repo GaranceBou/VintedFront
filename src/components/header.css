@@ -1,6 +1,7 @@
 .logovinted {
   width: 104px;
   height: 40px;
+  margin-left: 10px;
 }
 
 .logovinted:hover {
@@ -33,6 +34,7 @@ header {
   display: flex;
   gap: 20px;
 }
+
 .white button {
   background-color: white;
   border: 1px solid #2baeb7;
@@ -48,7 +50,7 @@ header {
   border: none;
   padding: 8px 25px;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .search {
