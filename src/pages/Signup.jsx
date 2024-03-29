@@ -1,25 +1,21 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
-const Signup = () => {
-  const navigate = useNavigate();
-  const [data, setData] = useState({});
+const Signup = ({ handleToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [showError, setShowError] = useState(false);
-  const [token, setToken] = useState("");
-
-  Cookies.set("token", token), { expires: 3 };
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
       if (password.length > 8) {
-        setShowError(false);
+        setErrorMessage("");
         const response = await axios.post(
           "https://lereacteur-vinted-api.herokuapp.com/user/signup",
           {
@@ -30,14 +26,19 @@ const Signup = () => {
           }
         );
         console.log(response.data);
-        setData(response.data);
-        setToken(response.data.token);
+        handleToken(response.data.token);
         alert("Inscription validée !");
+        navigate("/");
       } else {
         setShowError(true);
       }
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data);
+      if (error.response.status === 409) {
+        setErrorMessage("Un compte est déjà relié à cette adresse mail");
+      } else if (error.response.data.message === "Missing parameters") {
+        setErrorMessage("Tous les champs doivent être remplis");
+      }
     }
   };
 
@@ -99,7 +100,7 @@ const Signup = () => {
           <button className="signupbutton" type="submit" value="Submit">
             S'inscrire
           </button>
-
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           {showError === true && (
             <p style={{ color: "red" }}>
               Le mot de passe doit faire plus de 8 caractères.

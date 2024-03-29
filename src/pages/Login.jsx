@@ -1,20 +1,25 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
-const Login = () => {
-  const navigate = useNavigate();
+const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
-        {}
+        {
+          email: email,
+          password: password,
+        }
       );
+      console.log(response.data);
+      handleToken(response.data.token);
+      navigate("/");
     } catch (error) {
       console.log(error.response);
     }
@@ -48,7 +53,9 @@ const Login = () => {
           }}
         />
         <div className="divider"></div>
-        <button className="loginbutton">Se connecter</button>
+        <button type="submit" className="loginbutton">
+          Se connecter
+        </button>
       </form>
       <p className="linkpages" onClick={() => navigate("/signup")}>
         Pas encore de compte ? Inscris toi !

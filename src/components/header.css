@@ -54,6 +54,7 @@ header {
   border-radius: 3px;
   font-size: 12px;
   flex-shrink: 0;
+  margin-right: 15px;
 }
 
 .search {
@@ -86,4 +87,14 @@ header {
 
 input:focus {
   outline: none;
+}
+
+.disconnect {
+  background-color: white;
+  border: 1px solid #2baeb7;
+  color: #2baeb7;
+  padding: 8px 25px;
+  border-radius: 3px;
+  font-size: 12px;
+  flex-shrink: 0;
 }
