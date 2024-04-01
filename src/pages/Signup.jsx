@@ -3,13 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
+  const [avatar, setAvatar] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Signup = ({ handleToken }) => {
             email: email,
             password: password,
             newsletter: newsletter,
+            avatar: avatar,
           }
         );
         console.log(response.data);
@@ -81,12 +83,20 @@ const Signup = ({ handleToken }) => {
             }}
           />
           <div className="divider"></div>
+          <input
+            className="input-pictures"
+            type="file"
+            onChange={(e) => {
+              setAvatar(e.target.files[0]);
+            }}
+          />
+          <div className="divider"></div>
           <div className="newsletter">
             <input
               checked={newsletter}
               className="newstick"
               type="checkbox"
-              onChange={(e) => {
+              onChange={() => {
                 setNewsletter(!newsletter);
               }}
             />

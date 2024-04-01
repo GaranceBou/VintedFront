@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Publish = () => {
+const Publish = ({ token }) => {
+  const navigate = useNavigate();
   const [picture, setPicture] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -37,8 +39,8 @@ const Publish = () => {
           },
         }
       );
-      console.log(response.data);
       setPictureFromCloudinary(response.data.secure_url);
+      navigate("/");
     } catch (error) {
       console.log(error.response.data);
     }
