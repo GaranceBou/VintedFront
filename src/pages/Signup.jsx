@@ -1,12 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+library.add(faEye, faEyeSlash);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Signup = ({ handleToken }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -73,15 +78,23 @@ const Signup = ({ handleToken }) => {
             }}
           />
           <div className="divider"></div>
-          <input
-            value={password}
-            type="password"
-            placeholder="Mot de passe"
-            name="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
+          <div className="spassword-input">
+            <input
+              value={password}
+              type={showPassword ? "text" : "password"}
+              placeholder="Mot de passe"
+              name="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <FontAwesomeIcon
+              className="eye"
+              icon={showPassword ? "eye-slash" : "eye"}
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
+          </div>
+
           <div className="divider"></div>
           <input
             className="input-pictures"

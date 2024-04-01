@@ -63,3 +63,7 @@ h1 {
 .linkpages:hover {
   cursor: pointer;
 }
+
+.spassword-input {
+  position: relative;
+}

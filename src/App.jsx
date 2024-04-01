@@ -29,6 +29,9 @@ import Publish from "./pages/Publish";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+
   const [token, setToken] = useState(Cookies.get("token") || null);
 
   const handleToken = (token) => {
@@ -46,11 +49,20 @@ function App() {
       <Header
         token={token}
         search={search}
+        priceMin={priceMin}
+        priceMax={priceMax}
         handleToken={handleToken}
         setSearch={setSearch}
+        setPriceMin={setPriceMin}
+        setPriceMax={setPriceMax}
       />
       <Routes>
-        <Route path="/" element={<Home search={search} />} />
+        <Route
+          path="/"
+          element={
+            <Home search={search} priceMin={priceMin} priceMax={priceMax} />
+          }
+        />
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />

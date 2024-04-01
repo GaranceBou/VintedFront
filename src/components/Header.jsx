@@ -27,7 +27,7 @@ const Header = ({ token, search, handleToken, setSearch }) => {
               }}
             />
           </div>
-          <div className="order">
+          {/* <div className="order">
             <div className="set">
               <p>Trier par prix :</p>
               <input className="tickprice" type="checkbox" name="price" />
@@ -35,7 +35,7 @@ const Header = ({ token, search, handleToken, setSearch }) => {
             <div className="set">
               <p>Prix entre :</p>
             </div>
-          </div>
+          </div> */}
         </div>
         {token ? (
           <button
@@ -57,15 +57,17 @@ const Header = ({ token, search, handleToken, setSearch }) => {
             </Link>
           </div>
         )}
-        {token ? (
-          <Link to="/publish">
-            <button className="blue">Vends tes articles</button>
-          </Link>
-        ) : (
-          <Link to="/login">
-            <button className="blue">Vends tes articles</button>
-          </Link>
-        )}
+        <div className="blue">
+          {token ? (
+            <Link to="/publish">
+              <button>Vends tes articles</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button>Vends tes articles</button>
+            </Link>
+          )}
+        </div>
       </section>
     </header>
   );

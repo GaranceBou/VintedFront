@@ -4,7 +4,7 @@ import axios from "axios";
 import banner from "../assets/banner.jpg";
 import tear from "../assets/tear.svg";
 
-const Home = ({ search }) => {
+const Home = ({ search, priceMin, priceMax }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +12,7 @@ const Home = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${priceMin}&&priceMax=${priceMax}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -21,7 +21,7 @@ const Home = ({ search }) => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, priceMin, priceMax]);
 
   return isLoading ? (
     <p>Is loading...</p>

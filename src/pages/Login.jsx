@@ -1,10 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+library.add(faEye, faEyeSlash);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -22,6 +27,7 @@ const Login = ({ handleToken }) => {
       navigate("/");
     } catch (error) {
       console.log(error.response);
+      alert("Votre adresse mail ou votre mot de passe sont incorrects.");
     }
   };
 
@@ -43,15 +49,22 @@ const Login = ({ handleToken }) => {
           }}
         />
         <div className="divider"></div>
-        <input
-          value={password}
-          type="password"
-          placeholder="Mot de passe"
-          name="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+        <div className="lpassword-input">
+          <input
+            value={password}
+            type={showPassword ? "text" : "password"}
+            placeholder="Mot de passe"
+            name="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <FontAwesomeIcon
+            className="eye"
+            icon={showPassword ? "eye-slash" : "eye"}
+            onClick={() => setShowPassword((prevState) => !prevState)}
+          />
+        </div>
         <div className="divider"></div>
         <button type="submit" className="loginbutton">
           Se connecter
