@@ -24,16 +24,22 @@ header {
 .order {
   display: flex;
   gap: 40px;
+  margin-left: 25px;
 }
 
 .order p {
   font-size: 13px;
+}
+.set p {
+  font-family: "Allerta", sans-serif;
+  font-size: 11px;
 }
 
 .white {
   display: flex;
   gap: 20px;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .white button {
@@ -58,12 +64,13 @@ header {
 }
 
 .search {
-  background-color: #f5f6f7;
+  background-color: #f7f5f7;
   border: none;
   height: 40px;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 1px;
-  width: 95%;
+  width: 100%;
+  padding-left: 35px;
 }
 
 .bar input::placeholder {
@@ -72,13 +79,17 @@ header {
 }
 
 .bar {
-  background-color: #f5f6f7;
   margin: 10px;
-  width: 600px;
+  max-width: 600px;
+  position: relative;
+  display: flex;
 }
 
 .bar span {
   padding: 0 7px;
+  position: absolute;
+  top: 12px;
+  left: 4px;
 }
 
 .set {
@@ -97,4 +108,8 @@ input:focus {
   border-radius: 3px;
   font-size: 12px;
   flex-shrink: 0;
+}
+
+.header-price {
+  width: 620px;
 }

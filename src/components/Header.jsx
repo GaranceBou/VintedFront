@@ -2,7 +2,7 @@ import logo from "../assets/logovinted.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ token, handleToken }) => {
+const Header = ({ token, search, handleToken, setSearch }) => {
   return (
     <header>
       <section className="top">
@@ -21,6 +21,9 @@ const Header = ({ token, handleToken }) => {
               className="search"
               type="text"
               placeholder="Recherche des articles"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
             />
           </div>
           <div className="order">

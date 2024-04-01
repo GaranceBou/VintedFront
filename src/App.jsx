@@ -26,6 +26,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 function App() {
+  const [search, setSearch] = useState("");
   const [token, setToken] = useState(Cookies.get("token") || null);
 
   const handleToken = (token) => {
@@ -40,9 +41,14 @@ function App() {
 
   return (
     <Router>
-      <Header token={token} handleToken={handleToken} />
+      <Header
+        token={token}
+        search={search}
+        handleToken={handleToken}
+        setSearch={setSearch}
+      />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home search={search} />} />
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
