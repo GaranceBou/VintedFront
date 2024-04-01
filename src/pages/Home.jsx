@@ -4,7 +4,7 @@ import axios from "axios";
 import banner from "../assets/banner.jpg";
 import tear from "../assets/tear.svg";
 
-const Home = ({ search, priceMin, priceMax }) => {
+const Home = ({ token, search, priceMin, priceMax }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,7 +37,15 @@ const Home = ({ search, priceMin, priceMax }) => {
         <div className="replace">
           <div className="rectangle">
             <h2>Prêts à faire du tri dans vos placards ?</h2>
-            <button className="startselling">Commencer à vendre</button>
+            {token ? (
+              <Link to="/publish">
+                <button className="startselling">Commencer à vendre</button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button className="startselling">Commencer à vendre</button>
+              </Link>
+            )}
           </div>
         </div>
       </section>
@@ -86,5 +94,3 @@ const Home = ({ search, priceMin, priceMax }) => {
 };
 
 export default Home;
-
-// `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${priceMin}`

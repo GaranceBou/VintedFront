@@ -60,7 +60,12 @@ function App() {
         <Route
           path="/"
           element={
-            <Home search={search} priceMin={priceMin} priceMax={priceMax} />
+            <Home
+              token={token}
+              search={search}
+              priceMin={priceMin}
+              priceMax={priceMax}
+            />
           }
         />
         <Route path="/offers/:id" element={<Offer />} />
