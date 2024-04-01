@@ -111,9 +111,9 @@ input:focus {
 }
 
 .disconnect {
-  background-color: white;
-  border: 1px solid #2baeb7;
-  color: #2baeb7;
+  background-color: #b72b2b;
+  border: 1px solid#b72b2b;
+  color: white;
   padding: 8px 20px;
   border-radius: 3px;
   font-size: 12px;
