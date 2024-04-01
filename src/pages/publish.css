@@ -1,0 +1,86 @@
+.background-publish {
+  display: flex;
+  height: 850px;
+  background-color: #ebedee;
+  font-family: "Allerta", sans-serif;
+}
+
+.publish-class {
+  width: 1280px;
+  padding: 50px 0;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h4 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.publish-div {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  padding: 8px;
+  background-color: white;
+}
+
+.pairs {
+  display: flex;
+  align-items: center;
+}
+
+.pairs p {
+  flex: 2;
+  color: #000000;
+}
+
+.pairs > input {
+  flex: 2;
+}
+
+.publish-setprice {
+  flex: 2;
+}
+
+.pairs input::placeholder {
+  color: #a7a6a6;
+}
+
+.publish-form {
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.publish-form input {
+  border: none;
+  padding: 8px;
+}
+
+.publish-divider {
+  background-color: #e3dede;
+  height: 1px;
+  margin: 10px;
+}
+
+.add {
+  background-color: #2baeb7;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 3px;
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-right: 15px;
+  width: 100px;
+  border: 1px solid #2baeb7;
+}
+
+.publish-exchanges {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.input-pictures {
+  color: #666666;
+}

@@ -5,6 +5,7 @@ import "./pages/offer.css";
 import "./pages/signup.css";
 import "./pages/home.css";
 import "./pages/login.css";
+import "./pages/publish.css";
 
 //others:
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -52,6 +54,7 @@ function App() {
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
     </Router>
   );

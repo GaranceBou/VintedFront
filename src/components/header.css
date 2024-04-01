@@ -94,6 +94,7 @@ header {
 
 .set {
   display: flex;
+  align-items: center;
 }
 
 input:focus {

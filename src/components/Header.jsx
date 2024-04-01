@@ -1,8 +1,9 @@
 import logo from "../assets/logovinted.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ token, search, handleToken, setSearch }) => {
+  const navigate = useNavigate();
   return (
     <header>
       <section className="top">
@@ -41,6 +42,7 @@ const Header = ({ token, search, handleToken, setSearch }) => {
             className="disconnect"
             onClick={() => {
               handleToken(null);
+              navigate("/");
             }}
           >
             Déconnexion
@@ -55,7 +57,15 @@ const Header = ({ token, search, handleToken, setSearch }) => {
             </Link>
           </div>
         )}
-        <button className="blue">Vends tes articles</button>
+        {token ? (
+          <Link to="/publish">
+            <button className="blue">Vends tes articles</button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="blue">Vends tes articles</button>
+          </Link>
+        )}
       </section>
     </header>
   );
