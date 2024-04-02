@@ -12,8 +12,8 @@
 }
 
 .main {
+  min-height: calc(100vh - 60px);
   background-color: #ebedee;
-  height: 900px;
 }
 
 .middle-offer {
@@ -21,7 +21,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 40px 95px;
+  padding: 95px 95px;
 }
 
 .articleimages {

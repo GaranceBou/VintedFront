@@ -14,7 +14,6 @@ const Publish = ({ token }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
-  const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -40,8 +39,9 @@ const Publish = ({ token }) => {
           },
         }
       );
-      setPictureFromCloudinary(response.data.secure_url);
-      navigate("/");
+      if (response.data._id) {
+        navigate(`/offers/${response.data._id}`);
+      }
     } catch (error) {
       console.log(error.response.data);
     }

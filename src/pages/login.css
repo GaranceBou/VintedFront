@@ -1,3 +1,8 @@
+.login-background {
+  background-color: white;
+  min-height: 100%;
+}
+
 .formshapelogin {
   width: 480px;
   margin: 80px auto;

@@ -1,9 +1,8 @@
 .payment-background {
   display: flex;
-  height: 100%;
+  min-height: calc(100vh - 60px);
   background-color: #ebedee;
   font-family: system-ui, sans-serif;
-  padding-bottom: 50px;
 }
 
 .payment-class {

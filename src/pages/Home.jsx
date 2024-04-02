@@ -26,7 +26,7 @@ const Home = ({ token, search, priceMin, priceMax }) => {
   return isLoading ? (
     <p>Is loading...</p>
   ) : (
-    <div>
+    <div className="home-background">
       <section
         className="hero"
         style={{

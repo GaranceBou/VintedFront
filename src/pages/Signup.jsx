@@ -17,8 +17,8 @@ const Signup = ({ handleToken }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [avatar, setAvatar] = useState();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
       if (password.length > 8) {
         setErrorMessage("");
@@ -63,8 +63,8 @@ const Signup = ({ handleToken }) => {
             type="text"
             placeholder="Nom d'utilisateur"
             name="username"
-            onChange={(e) => {
-              setUsername(e.target.value);
+            onChange={(event) => {
+              setUsername(event.target.value);
             }}
           />
           <div className="divider"></div>
@@ -95,14 +95,17 @@ const Signup = ({ handleToken }) => {
             />
           </div>
 
-          <div className="divider"></div>
+          {/* <div className="divider"></div>
+          <label htmlFor="avatat-input">+ Ajoute une photo</label>
           <input
+            style={{ display: "none" }}
+            id="avatar-input"
             className="input-pictures"
             type="file"
             onChange={(e) => {
               setAvatar(e.target.files[0]);
             }}
-          />
+          /> */}
           <div className="divider"></div>
           <div className="newsletter">
             <input

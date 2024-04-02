@@ -34,48 +34,50 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="formshapelogin">
-      <h1>Se connecter</h1>
-      <form
-        className="formlogin"
-        style={{ display: "flex", flexDirection: "column" }}
-        onSubmit={handleSubmit}
-      >
-        <input
-          value={email}
-          type="email"
-          placeholder="Adresse email"
-          name="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <div className="divider"></div>
-        <div className="lpassword-input">
+    <section className="login-background">
+      <div className="formshapelogin">
+        <h1>Se connecter</h1>
+        <form
+          className="formlogin"
+          style={{ display: "flex", flexDirection: "column" }}
+          onSubmit={handleSubmit}
+        >
           <input
-            value={password}
-            type={showPassword ? "text" : "password"}
-            placeholder="Mot de passe"
-            name="password"
+            value={email}
+            type="email"
+            placeholder="Adresse email"
+            name="email"
             onChange={(e) => {
-              setPassword(e.target.value);
+              setEmail(e.target.value);
             }}
           />
-          <FontAwesomeIcon
-            className="eye"
-            icon={showPassword ? "eye-slash" : "eye"}
-            onClick={() => setShowPassword((prevState) => !prevState)}
-          />
-        </div>
-        <div className="divider"></div>
-        <button type="submit" className="loginbutton">
-          Se connecter
-        </button>
-      </form>
-      <p className="linkpages" onClick={() => navigate("/signup")}>
-        Pas encore de compte ? Inscris toi !
-      </p>
-    </div>
+          <div className="divider"></div>
+          <div className="lpassword-input">
+            <input
+              value={password}
+              type={showPassword ? "text" : "password"}
+              placeholder="Mot de passe"
+              name="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <FontAwesomeIcon
+              className="eye"
+              icon={showPassword ? "eye-slash" : "eye"}
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
+          </div>
+          <div className="divider"></div>
+          <button type="submit" className="loginbutton">
+            Se connecter
+          </button>
+        </form>
+        <p className="linkpages" onClick={() => navigate("/signup")}>
+          Pas encore de compte ? Inscris toi !
+        </p>
+      </div>
+    </section>
   );
 };
 
