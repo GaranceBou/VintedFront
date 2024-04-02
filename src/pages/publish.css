@@ -1,8 +1,9 @@
 .background-publish {
   display: flex;
-  height: 850px;
+  height: 100%;
   background-color: #ebedee;
   font-family: "Allerta", sans-serif;
+  padding-bottom: 50px;
 }
 
 .publish-class {
@@ -27,24 +28,45 @@ h4 {
 
 .pairs {
   display: flex;
-  align-items: center;
 }
 
-.pairs p {
+.pairs > p {
   flex: 2;
   color: #000000;
+  padding-top: 8px;
 }
 
-.pairs > input {
-  flex: 2;
-}
-
-.publish-setprice {
+.pairs > input,
+.pairs textarea {
   flex: 2;
 }
 
 .pairs input::placeholder {
   color: #a7a6a6;
+  font-family: system-ui, sans-serif;
+}
+
+.pairs textarea::placeholder {
+  color: #a7a6a6;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  opacity: 1;
+}
+
+textarea {
+  resize: none;
+}
+
+.pairs textarea:focus {
+  outline: none;
+}
+
+.pairs textarea {
+  border: none;
+}
+
+.publish-setprice {
+  flex: 2.05;
 }
 
 .publish-form {
@@ -63,6 +85,11 @@ h4 {
   margin: 10px;
 }
 
+.add-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .add {
   background-color: #2baeb7;
   color: white;
@@ -70,7 +97,7 @@ h4 {
   border-radius: 3px;
   font-size: 12px;
   flex-shrink: 0;
-  margin-right: 15px;
+  margin-top: 15px;
   width: 100px;
   border: 1px solid #2baeb7;
 }
@@ -83,4 +110,30 @@ h4 {
 
 .input-pictures {
   color: #666666;
+}
+
+label {
+  text-align: center;
+  color: #2baeb7;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.added-image {
+  max-width: 280px;
+  max-height: 280px;
+  border-radius: 1px;
+  box-shadow: 0px 0px 8px rgb(169, 167, 167);
+  margin-bottom: 5px;
+}
+
+.publish-photo-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }

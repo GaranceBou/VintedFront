@@ -16,8 +16,8 @@ const Publish = ({ token }) => {
   const [price, setPrice] = useState("");
   const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
       const formData = new FormData();
       formData.append("picture", picture);
@@ -56,17 +56,26 @@ const Publish = ({ token }) => {
           style={{ display: "flex", flexDirection: "column" }}
           onSubmit={handleSubmit}
         >
-          {pictureFromCloudinary && (
-            <img src={pictureFromCloudinary} alt="uploadedphoto" />
-          )}
           <div className="publish-div">
-            <input
-              className="input-pictures"
-              type="file"
-              onChange={(e) => {
-                setPicture(e.target.files[0]);
-              }}
-            />
+            <div className="publish-photo-up">
+              {picture && (
+                <img
+                  className="added-image"
+                  src={URL.createObjectURL(picture)}
+                  alt="photo"
+                />
+              )}
+              <label htmlFor="pictures-input">+ Ajoute une photo</label>
+              <input
+                style={{ display: "none" }}
+                id="pictures-input"
+                className="input-pictures"
+                type="file"
+                onChange={(e) => {
+                  setPicture(e.target.files[0]);
+                }}
+              />
+            </div>
           </div>
           <div className="publish-div">
             <div className="pairs">
@@ -84,8 +93,9 @@ const Publish = ({ token }) => {
             <div className="publish-divider"></div>
             <div className="pairs">
               <p>Décris ton article</p>
-              <input
-                type="text"
+              <textarea
+                rows={6}
+                cols={30}
                 name="description"
                 placeholder="ex: porté quelques fois, taille correctement"
                 value={description}
@@ -136,7 +146,7 @@ const Publish = ({ token }) => {
             </div>
             <div className="publish-divider"></div>
             <div className="pairs">
-              <p>Etat</p>
+              <p>État</p>
               <input
                 type="text"
                 name="condition"
@@ -187,9 +197,11 @@ const Publish = ({ token }) => {
               </div>
             </div>
           </div>
-          <button className="add" type="submit">
-            Ajouter
-          </button>
+          <div className="add-button">
+            <button className="add" type="submit">
+              Ajouter
+            </button>
+          </div>
         </form>
       </div>
     </section>

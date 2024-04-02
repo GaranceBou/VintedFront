@@ -6,6 +6,8 @@ import "./pages/signup.css";
 import "./pages/home.css";
 import "./pages/login.css";
 import "./pages/publish.css";
+import "./pages/payment.css";
+import "./components/checkoutForm.css";
 
 //others:
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -26,6 +28,7 @@ import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -72,6 +75,7 @@ function App() {
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<Payment token={token} />} />
       </Routes>
     </Router>
   );
