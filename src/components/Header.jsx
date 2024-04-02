@@ -50,10 +50,10 @@ const Header = ({ token, search, handleToken, setSearch }) => {
         ) : (
           <div className="white">
             <Link to="/signup">
-              <button>S'inscrire</button>
+              <button className="btnsignup">S'inscrire</button>
             </Link>
             <Link to="/login">
-              <button>Se connecter</button>
+              <button className="btnlogin">Se connecter</button>
             </Link>
           </div>
         )}

@@ -72,3 +72,10 @@
 .payment-laststep {
   margin-top: 25px;
 }
+
+@media (max-width: 768px) {
+  .payment-rectangle {
+    margin: 16px;
+    margin-bottom: 30px;
+  }
+}

@@ -133,16 +133,39 @@ input:focus {
   .logovinted {
     margin-left: 10px;
   }
+
+  .btnsignup {
+    margin-left: 8px;
+  }
 }
 
 @media (max-width: 768px) {
   .top {
     max-width: 768px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     padding: 10px;
-    align-items: center;
     justify-content: center;
+  }
+
+  .blue {
+    display: none;
+  }
+
+  .btnsignup {
+    display: none;
+  }
+
+  .logovinted {
+    width: 80px;
+    height: 30px;
+  }
+
+  .bar input::placeholder {
+    font-size: 13px;
+  }
+
+  .disconnect {
+    padding: 8px 15px;
+    margin-left: 8px;
   }
 }

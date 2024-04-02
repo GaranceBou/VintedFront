@@ -41,7 +41,7 @@
 
 .replace {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 100%;
 }
 
 .productpic {
@@ -53,7 +53,7 @@
 
 .offers {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -122,7 +122,7 @@ h2 {
 @media (max-width: 768px) {
   .rectangle {
     height: 150px;
-    width: 300px;
+    width: 270px;
   }
 
   h2 {
@@ -134,11 +134,20 @@ h2 {
   }
 
   .productpic {
-    height: 300px;
-    width: 200px;
+    height: 280px;
+    width: 180px;
   }
 
   .startselling {
     font-size: 14px;
+  }
+
+  .offers {
+    margin-left: 0px;
+  }
+
+  .secondpart {
+    margin: 0 auto;
+    max-width: 100%;
   }
 }

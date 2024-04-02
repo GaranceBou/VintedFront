@@ -44,3 +44,10 @@
   right: 6px;
   top: 10px;
 }
+
+@media (max-width: 768px) {
+  .formshapelogin {
+    width: 300px;
+    margin: 60px auto;
+  }
+}
