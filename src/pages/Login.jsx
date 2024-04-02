@@ -27,7 +27,9 @@ const Login = ({ handleToken }) => {
       navigate("/");
     } catch (error) {
       console.log(error.response);
-      alert("Votre adresse mail ou votre mot de passe sont incorrects.");
+      if (error.response.status === 401) {
+        alert("Votre adresse mail ou votre mot de passe sont incorrects.");
+      }
     }
   };
 
