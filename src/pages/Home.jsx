@@ -12,7 +12,9 @@ const Home = ({ token, search, priceMin, priceMax }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${priceMin}&&priceMax=${priceMax}`
+          `${
+            import.meta.env.VITE_API_URL
+          }/offers?title=${search}&priceMin=${priceMin}&&priceMax=${priceMax}`
         );
         setData(response.data);
         setIsLoading(false);

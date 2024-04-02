@@ -30,7 +30,7 @@ const Publish = ({ token }) => {
       formData.append("price", price);
 
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        `${import.meta.env.VITE_API_URL}/offer/publish`,
         formData,
         {
           headers: {

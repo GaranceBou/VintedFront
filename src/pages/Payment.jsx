@@ -5,9 +5,7 @@ import CheckoutForm from "../components/CheckoutForm";
 import { useLocation } from "react-router-dom";
 
 // clé donnée par le réacteur:
-const stripePromise = loadStripe(
-  "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
-);
+const stripePromise = loadStripe(`${import.meta.env.VITE_STRIPE_KEY}`);
 
 const Payment = ({ token }) => {
   const location = useLocation();

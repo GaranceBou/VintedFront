@@ -35,7 +35,7 @@ const CheckoutForm = ({ title, price }) => {
 
     // on envoie une requête au backend renvoie le clientSecret:
     const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/v2/payment",
+      `${import.meta.env.VITE_API_URL}/v2/payment`,
       {
         title: title,
         amount: price,

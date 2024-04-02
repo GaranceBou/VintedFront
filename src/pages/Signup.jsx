@@ -23,7 +23,7 @@ const Signup = ({ handleToken }) => {
       if (password.length > 8) {
         setErrorMessage("");
         const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+          `${import.meta.env.VITE_API_URL}/user/signup`,
           {
             username: username,
             email: email,
