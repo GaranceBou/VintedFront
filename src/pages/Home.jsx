@@ -37,15 +37,9 @@ const Home = ({ token, search, priceMin, priceMax }) => {
         <div className="replace">
           <div className="rectangle">
             <h2>Prêts à faire du tri dans vos placards ?</h2>
-            {token ? (
-              <Link to="/publish">
-                <button className="startselling">Commencer à vendre</button>
-              </Link>
-            ) : (
-              <Link to="/login">
-                <button className="startselling">Commencer à vendre</button>
-              </Link>
-            )}
+            <Link to="/publish">
+              <button className="startselling">Commencer à vendre</button>
+            </Link>
           </div>
         </div>
       </section>

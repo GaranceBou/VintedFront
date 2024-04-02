@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Publish = ({ token }) => {
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
   const [condition, setCondition] = useState("");
-  const [place, setPlace] = useState("");
+  const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
   const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
 
@@ -46,7 +47,7 @@ const Publish = ({ token }) => {
     }
   };
 
-  return (
+  return token ? (
     <section className="background-publish">
       <div className="publish-class">
         <h4>Vends ton article</h4>
@@ -153,9 +154,9 @@ const Publish = ({ token }) => {
                 type="text"
                 name="place"
                 placeholder="ex: Nantes"
-                value={place}
+                value={city}
                 onChange={(event) => {
-                  setPlace(event.target.value);
+                  setCity(event.target.value);
                 }}
               />
             </div>
@@ -192,6 +193,8 @@ const Publish = ({ token }) => {
         </form>
       </div>
     </section>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

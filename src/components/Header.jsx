@@ -58,15 +58,9 @@ const Header = ({ token, search, handleToken, setSearch }) => {
           </div>
         )}
         <div className="blue">
-          {token ? (
-            <Link to="/publish">
-              <button>Vends tes articles</button>
-            </Link>
-          ) : (
-            <Link to="/login">
-              <button>Vends tes articles</button>
-            </Link>
-          )}
+          <Link to="/publish">
+            <button>Vends tes articles</button>
+          </Link>
         </div>
       </section>
     </header>
