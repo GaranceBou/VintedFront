@@ -55,7 +55,7 @@ const CheckoutForm = ({ title, price }) => {
       },
       redirect: "if_required",
     });
-
+    console.log(stripeResponse);
     // en cas d'erreur:
     if (stripeResponse.error) {
       setErrorMessage(stripeResponse.error.message);

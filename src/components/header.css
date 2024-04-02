@@ -2,6 +2,7 @@
   width: 104px;
   height: 40px;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .logovinted:hover {
@@ -130,8 +131,6 @@ input:focus {
   }
 
   .logovinted {
-    width: 95px;
-    height: 40px;
     margin-left: 10px;
   }
 }

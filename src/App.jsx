@@ -7,7 +7,6 @@ import "./pages/home.css";
 import "./pages/login.css";
 import "./pages/publish.css";
 import "./pages/payment.css";
-import "./components/checkoutForm.css";
 
 //others:
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
